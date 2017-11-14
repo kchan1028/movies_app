@@ -1,0 +1,87 @@
+<%= form_with(model: movie, local: true) do |form| %>
+  <% if movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+      <% movie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :adult %>
+    <%= form.check_box :adult, id: :movie_adult %>
+  </div>
+
+  <div class="field">
+    <%= form.label :website_url %>
+    <%= form.text_field :website_url, id: :movie_website_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tmdb_id %>
+    <%= form.number_field :tmdb_id, id: :movie_tmdb_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :imdb_id %>
+    <%= form.text_field :imdb_id, id: :movie_imdb_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :original_language %>
+    <%= form.text_field :original_language, id: :movie_original_language %>
+  </div>
+
+  <div class="field">
+    <%= form.label :original_title %>
+    <%= form.text_field :original_title, id: :movie_original_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :overview %>
+    <%= form.text_area :overview, id: :movie_overview %>
+  </div>
+
+  <div class="field">
+    <%= form.label :popularity %>
+    <%= form.text_field :popularity, id: :movie_popularity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :runtime %>
+    <%= form.number_field :runtime, id: :movie_runtime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_area :status, id: :movie_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tagline %>
+    <%= form.text_field :tagline, id: :movie_tagline %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :movie_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vote_average %>
+    <%= form.text_field :vote_average, id: :movie_vote_average %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vote_count %>
+    <%= form.number_field :vote_count, id: :movie_vote_count %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

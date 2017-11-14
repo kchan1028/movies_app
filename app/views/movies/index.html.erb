@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Movies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Adult</th>
+      <th>Website url</th>
+      <th>Tmdb</th>
+      <th>Imdb</th>
+      <th>Original language</th>
+      <th>Original title</th>
+      <th>Overview</th>
+      <th>Popularity</th>
+      <th>Runtime</th>
+      <th>Status</th>
+      <th>Tagline</th>
+      <th>Title</th>
+      <th>Vote average</th>
+      <th>Vote count</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.adult %></td>
+        <td><%= movie.website_url %></td>
+        <td><%= movie.tmdb_id %></td>
+        <td><%= movie.imdb_id %></td>
+        <td><%= movie.original_language %></td>
+        <td><%= movie.original_title %></td>
+        <td><%= movie.overview %></td>
+        <td><%= movie.popularity %></td>
+        <td><%= movie.runtime %></td>
+        <td><%= movie.status %></td>
+        <td><%= movie.tagline %></td>
+        <td><%= movie.title %></td>
+        <td><%= movie.vote_average %></td>
+        <td><%= movie.vote_count %></td>
+        <td><%= link_to 'Show', movie %></td>
+        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Movie', new_movie_path %>

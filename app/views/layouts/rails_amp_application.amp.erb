@@ -1,0 +1,34 @@
+<!doctype html>
+<html amp>
+  <head>
+    <meta charset="utf-8">
+    <title>Rails AMP</title>
+    <link rel="canonical" href="<%= rails_amp_canonical_url %>" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <!-- Set page data type by JSON-LD with schema.org. -->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "*****",
+        "mainEntityOfPage": "*****",
+        "datePublished": "*****"
+      }
+    </script>
+
+    <!-- Write custom css sytle for amp html here. -->
+    <style amp-custom>
+      body {
+      }
+      amp-img {
+      }
+    </style>
+
+    <%= rails_amp_google_analytics_head %>
+    <%= rails_amp_html_header %>
+  </head>
+  <body>
+    <%= rails_amp_google_analytics_page_tracking %>
+    <%= yield %>
+  </body>
+</html>
